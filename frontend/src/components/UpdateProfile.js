@@ -22,7 +22,10 @@ const UpdateProfile = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const navigate = useNavigate();
 
-  const URL = "https://sparklify-official.onrender.com";
+// prefer env var, fallback to production if not set
+const URL =
+  process.env.REACT_APP_BACKEND_URL ||
+  "https://sparklify-official.onrender.com";
   const OPENCAGE_API_KEY = "f04de10f2b304f1d956f4b0bd8c96ecb"; // Replace with your API key
 
   useEffect(() => {

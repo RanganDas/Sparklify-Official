@@ -8,7 +8,10 @@ const StoryModal = ({ onClose, onStoryAdded }) => {
   const [caption, setCaption] = useState("");
   const [showImageInput, setShowImageInput] = useState(false); // Controls visibility of image URL input field
 
-  const URL = "https://sparklify-official.onrender.com";
+// prefer env var, fallback to production if not set
+const URL =
+  process.env.REACT_APP_BACKEND_URL ||
+  "https://sparklify-official.onrender.com";
   const handleSubmit = async (e) => {
     e.preventDefault();
 

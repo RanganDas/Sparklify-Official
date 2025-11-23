@@ -32,7 +32,10 @@ const Navbar = () => {
   // Handle mouse enter and leave for specific icons
   const handleMouseEnter = (icon) => setHoveredIcon(icon);
   const handleMouseLeave = () => setHoveredIcon(null);
-  const URL = "https://sparklify-official.onrender.com";
+// prefer env var, fallback to production if not set
+const URL =
+  process.env.REACT_APP_BACKEND_URL ||
+  "https://sparklify-official.onrender.com";
   
   const fetchNotificationCount = async () => {
     const token = localStorage.getItem("token");

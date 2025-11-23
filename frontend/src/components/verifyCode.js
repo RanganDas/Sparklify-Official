@@ -12,7 +12,10 @@ const VerifyCode = () => {
   const navigate = useNavigate();
   const email = sessionStorage.getItem("email");
 
-  const URL = 'https://sparklify-official.onrender.com';
+// prefer env var, fallback to production if not set
+const URL =
+  process.env.REACT_APP_BACKEND_URL ||
+  "https://sparklify-official.onrender.com";
   useEffect(() => {
     const isPendingVerification = sessionStorage.getItem("isPendingVerification");
 

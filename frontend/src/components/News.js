@@ -11,7 +11,10 @@ const News = () => {
   const sizeClasses = ["small"]; 
   const navigate = useNavigate();// Add more classes as needed
 
-  const URL = "https://sparklify-official.onrender.com";
+// prefer env var, fallback to production if not set
+const URL =
+  process.env.REACT_APP_BACKEND_URL ||
+  "https://sparklify-official.onrender.com";
   const fetchNews = async () => {
     setIsLoading(true);
     setError(null);

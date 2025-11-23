@@ -16,7 +16,10 @@ import UserModal from "./UserModal";
 const PostCard = ({ post }) => {
   const [likes, setLikes] = useState(post.likes || 0); // Initialize likes from the post
   const [isLiked, setIsLiked] = useState(post.isLiked || false); // Initialize based on backend data
-  const URL = "https://sparklify-official.onrender.com";
+// prefer env var, fallback to production if not set
+const URL =
+  process.env.REACT_APP_BACKEND_URL ||
+  "https://sparklify-official.onrender.com";
   const [isFavorite, setIsFavorite] = useState(post.isFavorite || false);
 
   const [favoritesCount, setFavoritesCount] = useState(post.favoritesCount || 0);

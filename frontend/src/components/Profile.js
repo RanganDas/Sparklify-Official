@@ -19,7 +19,10 @@ const Profile = () => {
 
   const [imageUrl, setImageUrl] = useState(""); // State for imageUrl
   const [loading, setLoading] = useState(true); // Loading state for API call
-  const URL = "https://sparklify-official.onrender.com";
+// prefer env var, fallback to production if not set
+const URL =
+  process.env.REACT_APP_BACKEND_URL ||
+  "https://sparklify-official.onrender.com";
   const fetchUserImage = async () => {
     try {
       const token = localStorage.getItem("token"); // Get the token from localStorage

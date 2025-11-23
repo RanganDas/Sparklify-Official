@@ -17,7 +17,10 @@ const UserDetailsModal = ({ userInfo, userId, onClose }) => {
   const [error, setError] = useState("");
   const [isFollowing, setIsFollowing] = useState(false);
 
-  const URL = "https://sparklify-official.onrender.com";
+// prefer env var, fallback to production if not set
+const URL =
+  process.env.REACT_APP_BACKEND_URL ||
+  "https://sparklify-official.onrender.com";
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
